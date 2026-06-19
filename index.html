@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Water Edit | Premium Glacial Hydration</title>
+  <meta name="description"
+    content="Experience purity in motion. A premium scroll-animated landing page showcasing the design and glacier-born elegance of The Water Edit.">
+  <link rel="stylesheet" href="./style.css">
+  <!-- Google Fonts for premium typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Syne:wght@500;700;800&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Premium Preloader Screen -->
+  <div id="loader" class="loader-container">
+    <div class="loader-card">
+      <h1 class="loader-logo">THE WATER EDIT</h1>
+      <p class="loader-subtitle">WHERE WATER MEETS IDENTITY</p>
+      <div class="loader-progress-bar">
+        <div id="loader-progress" class="loader-progress-fill" style="width: 0%;"></div>
+      </div>
+      <div id="loader-percentage" class="loader-percentage-text">0%</div>
+    </div>
+  </div>
+
+  <!-- Background Canvas for Scroll Animation -->
+  <div class="canvas-container">
+    <canvas id="animation-canvas"></canvas>
+    <div class="canvas-overlay"></div>
+  </div>
+
+  <!-- Sticky Navbar -->
+  <nav class="navbar" id="main-navbar">
+    <div class="navbar-brand" id="nav-brand">THE WATER EDIT</div>
+    <div class="navbar-links" id="nav-links">
+      <a href="#hero" class="nav-link active" id="link-hero">Home</a>
+      <a href="#redefined" class="nav-link" id="link-redefined">WHAT WE DO</a>
+      <a href="#source" class="nav-link" id="link-source">WHO SEES YOUR BRAND</a>
+      <a href="#design" class="nav-link" id="link-design">DIGITAL ENGAGEMENT</a>
+      <a href="#philosophy" class="nav-link" id="link-philosophy">WHY THE WATER EDIT</a>
+    </div>
+    <a href="#shop" class="navbar-cta-btn" id="btn-navbar-cta">Reserve Bottle</a>
+  </nav>
+
+  <!-- Scroll Scroll Indicator -->
+  <div class="scroll-indicator" id="scroll-indicator">
+    <div class="mouse-icon">
+      <span class="mouse-wheel"></span>
+    </div>
+    <span class="scroll-text">Scroll to Hydrate</span>
+  </div>
+
+  <!-- Foreground Scroll Sections -->
+  <main class="scroll-content">
+
+    <!-- Hero Section -->
+    <section id="hero" class="scroll-section hero-section active-section">
+      <div class="hero-content">
+        <span class="badge" id="hero-badge">A Smarter Way To Advertise Offline</span>
+        <h1 class="hero-title" id="hero-title">India's First <br><span class="italic-text">Bottle-Based Advertising
+            Network.</span></h1>
+        <p class="hero-desc" id="hero-description">Turning every table into an advertising space and every bottle into a
+          digital marketing tool. Reach your audience where they linger most.</p>
+      </div>
+    </section>
+
+    <!-- Purity Redefined Section -->
+    <section id="redefined" class="scroll-section redefined-section">
+      <div class="glass-section-card left-card" id="card-redefined">
+        <span class="card-badge">WHAT WE DO</span>
+        <h2 class="section-title">Turning Water Bottles Into <br>Advertising Space</h2>
+        <p class="section-text">
+          Premium water bottles placed in cafés become powerful offline advertising media. Your brand is seen directly
+          by customers while they dine, work, and socialize.
+        </p>
+        <div class="metric-container">
+          <div class="metric-item">
+            <span class="metric-value">25+</span>
+            <span class="metric-label">Cafes</span>
+          </div>
+          <div class="metric-item">
+            <span class="metric-value">36k+</span>
+            <span class="metric-label">physical ad views</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Source Section -->
+    <section id="source" class="scroll-section source-section">
+      <div class="glass-section-card right-card" id="card-source">
+        <span class="card-badge">WHO SEES YOUR BRAND</span>
+        <h2 class="section-title">Reach high value<br><span class="thin-text"> customers</span></h2>
+        <p class="section-text">
+          Position your brand in premium cafés where customers spend time, engage with their surroundings, and have
+          strong purchasing power.
+        </p>
+        <ul class="features-list">
+          <li>✨ Premium cafes</li>
+          <li>🗻 Targeted Reach</li>
+          <li>🍃 High-Intent Audience</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Crafted Design Section -->
+    <section id="design" class="scroll-section design-section">
+      <div class="glass-section-card left-card" id="card-design">
+        <span class="card-badge">DIGITAL ENGAGEMENT</span>
+        <h2 class="section-title">Scan. Engage. <br>Convert.</h2>
+        <p class="section-text">
+          Every bottle includes a QR experience that can direct customers to your website, campaign page, menu, reviews,
+          Instagram, or promotional offers.
+        </p>
+        <div class="specs-grid">
+          <div class="spec-cell">
+            <span class="spec-title">QR Enabled</span>
+            <span class="spec-desc">Enable sles from online and offlie both</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-title">Direct access</span>
+            <span class="spec-desc">Direct Access to advertiser's website</span>
+          </div>
+          <div class="spec-cell">
+            <span class="spec-title">Experience</span>
+            <span class="spec-desc">New Experience for customers</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shop / Reserve Section -->
+    <section id="philosophy" class="scroll-section shop-section">
+      <div class="shop-card-wrapper" id="card-shop">
+        <div class="glass-section-card center-card">
+          <span class="card-badge">WHY THE WATER EDIT</span>
+          <h2 class="section-title">Advertising That Stays On The Table</h2>
+          <p class="section-text">
+            Unlike billboards that people pass by, our bottles remain on tables throughout the customer experience,
+            creating longer attention and stronger brand recall.
+          </p>
+          <div class="shop-buttons">
+            <button class="primary-btn" id="btn-reserve-primary">STARTING FROM ₹3999</button>
+            <button class="secondary-btn" id="btn-details">KNOW MORE</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Premium Footer -->
+  <footer class="site-footer" id="site-footer">
+    <div class="footer-content">
+      <span class="footer-logo">THE WATER EDIT</span>
+      <p class="footer-copy">&copy; 2026 The Water Edit. All rights reserved. Created for premium hydration enthusiasts.
+      </p>
+    </div>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+
+</html>
