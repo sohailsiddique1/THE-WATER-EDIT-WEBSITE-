@@ -50,7 +50,7 @@ function preloadImages() {
           }, 600);
         }
       };
-      
+
       img.onerror = () => {
         console.error(`Failed to load frame ${i} at path: ${img.src}`);
         // Increment count so the loader doesn't get stuck in case of single image failures
@@ -77,10 +77,10 @@ function resizeCanvas() {
   // Set dimensions based on device pixel ratio for crystal clear rendering
   const dpr = window.devicePixelRatio || 1;
   const rect = canvas.getBoundingClientRect();
-  
+
   canvas.width = rect.width * dpr;
   canvas.height = rect.height * dpr;
-  
+
   // Re-draw the current frame on resize
   const frameToDraw = images[Math.round(currentFrameIndex)] || images[0];
   if (frameToDraw) {
@@ -90,20 +90,20 @@ function resizeCanvas() {
 
 function drawFrame(img) {
   if (!img) return;
-  
+
   const canvasWidth = canvas.width;
   const canvasHeight = canvas.height;
-  
+
   const imgWidth = img.naturalWidth || img.width;
   const imgHeight = img.naturalHeight || img.height;
-  
+
   if (imgWidth === 0 || imgHeight === 0) return; // Prevent division by zero
-  
+
   const imgRatio = imgWidth / imgHeight;
   const canvasRatio = canvasWidth / canvasHeight;
-  
+
   let drawWidth, drawHeight, drawX, drawY;
-  
+
   if (canvasRatio > imgRatio) {
     // Canvas is wider than the image aspect ratio (Crop top/bottom)
     drawWidth = canvasWidth;
@@ -117,7 +117,7 @@ function drawFrame(img) {
     drawX = (canvasWidth - drawWidth) / 2;
     drawY = 0;
   }
-  
+
   ctx.clearRect(0, 0, canvasWidth, canvasHeight);
   ctx.drawImage(img, drawX, drawY, drawWidth, drawHeight);
 }
@@ -129,13 +129,13 @@ function updateScroll() {
   const scrollTop = window.scrollY;
   // Calculate maximum height the user can scroll
   const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
-  
+
   // Guard against division by zero if page is not scrollable
   const scrollFraction = maxScroll > 0 ? scrollTop / maxScroll : 0;
-  
+
   // Target index maps smoothly from 0 to total frames - 1
   targetFrameIndex = Math.min(TOTAL_FRAMES - 1, Math.max(0, scrollFraction * (TOTAL_FRAMES - 1)));
-  
+
   // Scroll Indicator visibility toggle
   if (scrollTop > 50) {
     scrollIndicator.classList.add('indicator-hidden');
@@ -148,19 +148,19 @@ function updateScroll() {
 function renderLoop() {
   // LERP: currentFrameIndex slowly catches up to targetFrameIndex
   const delta = targetFrameIndex - currentFrameIndex;
-  
+
   if (Math.abs(delta) > 0.01) {
     currentFrameIndex += delta * easeFactor;
-    
+
     // Draw the image frame matching the current easing step
     const imgIndex = Math.round(currentFrameIndex);
     const activeImage = images[imgIndex];
-    
+
     if (activeImage && activeImage.complete) {
       drawFrame(activeImage);
     }
   }
-  
+
   requestAnimationFrame(renderLoop);
 }
 
@@ -182,7 +182,7 @@ function setupIntersectionObserver() {
       if (entry.isIntersecting) {
         // Fade in section card
         entry.target.classList.add('active-section');
-        
+
         // Update navigation link state
         const targetId = entry.target.getAttribute('id');
         navLinks.forEach(link => {
@@ -211,17 +211,17 @@ async function init() {
   // Establish baseline dimensions
   resizeCanvas();
   window.addEventListener('resize', resizeCanvas);
-  
+
   // Begin preloading assets
   await preloadImages();
-  
+
   // Set up listeners once loaded
   window.addEventListener('scroll', updateScroll, { passive: true });
   setupIntersectionObserver();
-  
+
   // Trigger initial frame layout calculation
   updateScroll();
-  
+
   // Boot up kinetic render animation loop
   renderLoop();
 }
