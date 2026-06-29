@@ -537,6 +537,8 @@ li {
 }
 
 .secondary-btn {
+  display: inline-block;
+  text-align: center;
   background-color: transparent;
   color: var(--text-primary);
   border: 1px solid var(--text-primary);
