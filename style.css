@@ -516,6 +516,8 @@ li {
 }
 
 .primary-btn {
+  display: inline-block;
+  text-align: center;
   background-color: var(--accent-color);
   color: white;
   border: none;
